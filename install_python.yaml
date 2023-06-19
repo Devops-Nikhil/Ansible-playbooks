@@ -1,0 +1,26 @@
+--
+- name: Check Python installation
+  hosts: connection # Here the hostfile name will required
+  gather_facts: true
+
+  tasks:
+    - name: Check if Python is installed
+      raw: python --version
+      register: python_output
+      ignore_errors: true
+
+    - name: Display Python version
+      debug:
+        var: python_output.stdout_lines
+
+    - name: Install Python if not present
+      raw: apt-get install -y python-is-python3
+
+    - name: Check Python installation again
+      raw: python --version
+      register: python_output_after_install
+      changed_when: python_output != python_output_after_install
+
+    - name: Display Python version after installation
+      debug:
+        var: python_output_after_install.stdout_lines
