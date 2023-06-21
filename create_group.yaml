@@ -1,0 +1,8 @@
+---
+- name: Ensure group exists
+  hosts: connection
+  become: true
+  tasks:
+  - ansible.builtin.group:
+      name: admin
+      state: present
