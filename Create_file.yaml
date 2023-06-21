@@ -1,0 +1,9 @@
+---
+- name: create a file in multiple servers
+  hosts: connection
+  become: true
+  tasks:
+  - name: create a file
+    file:
+      path: /root/test.txt # path where you want your file to be created #
+      state: touch
