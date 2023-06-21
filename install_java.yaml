@@ -1,0 +1,9 @@
+---
+-  hosts: connection # we define hosts of all connections that we defined in grop of host File #
+   become: yes
+   tasks:
+     -  name: installing java
+        apt:
+          name: openjdk-8-jdk
+          state: present
+          update_cache: yes
