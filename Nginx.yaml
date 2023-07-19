@@ -1,0 +1,19 @@
+---
+- name: Install Nginx 
+  hosts: Dev
+  become: true
+  become_user: root
+  tasks:
+    - name: Update apt cache (for Debian-based systems)
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Ubuntu"
+    - name: Install Nginx
+      package:
+        name: nginx
+        state: present
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: yes
