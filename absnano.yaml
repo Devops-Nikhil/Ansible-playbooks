@@ -1,0 +1,8 @@
+---
+-  name: check nano is present
+   hosts: all
+   tasks:
+    -  name: ensure nano is present
+       apt:
+        name: nano
+        state: absent
