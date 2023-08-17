@@ -1,5 +1,5 @@
 ---
--  hosts: ec2-34-204-202-154.compute-1.amazonaws.com
+-  hosts: 34.204.202.154
    become_user: root
    tasks:
      -  name: installing java
