@@ -1,0 +1,29 @@
+---
+- name: Create Jira Project
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create Jira Project
+      uri:
+        url: "http://localhost:8087/rest/api/2/project"
+        method: POST
+        user: "nikhil.gouswami"
+        password: "Nikhil123@!"
+        force_basic_auth: yes
+        status_code: 400  # Expected status code for successful creation
+        body_format: json
+        body: |
+          {
+            "key": "AWX",
+            "name": "Ridam",
+            "projectTypeKey": "business",
+            "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-project-management",
+            "description": "This is a new project created by Ansible",
+            "lead": "nikhil.gouswami",
+            "assigneeType": "PROJECT_LEAD"
+          }
+      register: jira_response
+
+    - name: Display Jira Response
+      debug:
+        var: jira_response.json
