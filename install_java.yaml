@@ -1,5 +1,5 @@
 ---
--  hosts: 34.204.202.154
+-  hosts: 192.168.6.226
    become_user: root
    tasks:
      -  name: installing java
