@@ -13,19 +13,21 @@
         status_code: 201  # Expected status code for successful creation
         body_format: json
         body: |
+          {
             "fields": {
-                "project": {
-                    "key": "GCP"
-                },
-                "summary": "Jira Tickets",
-                "description": "This is an example issue created by Ansible",
-                "issuetype": {
-                    "name": "Task"
-                }
+              "project": {
+                "key": "GCP"
+              },
+              "summary": "Jira Tickets",
+              "description": "This is an example issue created by Ansible",
+              "issuetype": {
+                "name": "Task"
+              }
             }
-            }
+          }
       register: jira_issue_response
 
     - name: Display Jira Issue Response
       debug:
         var: jira_issue_response.json
+
