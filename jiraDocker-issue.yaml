@@ -12,7 +12,7 @@
         force_basic_auth: yes
         status_code: 201  # Expected status code for successful creation
         body_format: json
-        body: |
+        body: >
           {
             "fields": {
               "project": {
