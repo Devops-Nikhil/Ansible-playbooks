@@ -15,16 +15,17 @@
         body: |
           {
             "fields": {
-              "project": {
-                "key": "CLOUD"  # Replace with the key of your existing project
-              },
-              "summary": "Example Issue",
-              "description": "This is an example issue created by Ansible",
-              "issuetype": {
-                "name": "Task"  # Replace with the desired issue type (e.g., Task, Bug, Story)
-              }
+                "project": {
+                    "key": "CLOUD"
+                },
+                "summary": "Example Issue",
+                "description": "This is an example issue created by Ansible",
+                "issuetype": {
+                    "name": "Task"
+                }
             }
           }
+
       register: jira_response
 
     - name: Display Jira Response
