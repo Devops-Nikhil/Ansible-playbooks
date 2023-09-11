@@ -14,8 +14,8 @@
         body_format: json
         body: |
           {
-            "key": "CLOUD",
-            "name": "AZ",
+            "key": "DEV",
+            "name": "GCP",
             "projectTypeKey": "software",
             "projectTemplateKey": "com.pyxis.greenhopper.jira:gh-kanban-template",
             "description": "This is a new project created by Ansible",
