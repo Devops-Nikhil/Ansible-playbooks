@@ -12,22 +12,18 @@
         force_basic_auth: yes
         status_code: 201  # Expected status code for successful creation
         body_format: json
-        body: >
-          {
+        body: |
             "fields": {
-              "project": {
-                "key": "GCP"  # Replace with your Jira project key
-              },
-              "summary": "New Issue Summary",
-              "description": "This is a new issue created by Ansible",
-              "issuetype": {
-                "name": "Task"  # Replace with the appropriate issue type
-              },
-              "assignee": {
-                "name": "ridam.kundu"  # Assign the issue to a user
-              }
+                "project": {
+                    "key": "GCP"
+                },
+                "summary": "Jira Tickets",
+                "description": "This is an example issue created by Ansible",
+                "issuetype": {
+                    "name": "Task"
+                }
             }
-          }
+            }
       register: jira_issue_response
 
     - name: Display Jira Issue Response
