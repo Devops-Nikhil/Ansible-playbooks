@@ -1,6 +1,6 @@
 ---
 - name: Install nginx and start service
-  hosts: ip-192-168-95-212.ec2.internal
+  hosts: ec2-107-23-238-240.compute-1.amazonaws.com
   remote_user: root
   become: yes
   tasks:
