@@ -14,7 +14,7 @@
         body_format: json
         body: |
           {
-            "key": "GCP",
+            "key": "ORACLE",
             "name": "Container-Creating",
             "projectTypeKey": "software",
             "projectTemplateKey": "com.pyxis.greenhopper.jira:gh-kanban-template",

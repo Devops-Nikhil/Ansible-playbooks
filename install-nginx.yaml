@@ -1,6 +1,6 @@
 ---
 - name: Install nginx and start service
-  hosts: all
+  hosts: ip-192-168-95-212.ec2.internal
   remote_user: root
   become: yes
   tasks:

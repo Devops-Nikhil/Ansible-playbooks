@@ -16,7 +16,7 @@
           {
             "fields": {
               "project": {
-                "key": "GCP"
+                "key": "ORACLE"
               },
               "summary": "Jira Tickets",
               "description": "This is an example issue created by Ansible",
