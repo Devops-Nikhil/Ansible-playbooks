@@ -1,6 +1,6 @@
 ---
 - name: Create Jira Project
-  hosts: ec2-54-198-250-47.compute-1.amazonaws.com
+  hosts: ec2-54-165-145-22.compute-1.amazonaws.com
   gather_facts: yes
   tasks:
     - name: Create Jira Project
