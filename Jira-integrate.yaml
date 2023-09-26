@@ -3,16 +3,16 @@
   hosts: localhost
   gather_facts: no
   tasks:
-    - name: Create Jira Project
-      jira_project:
-        jira_url: "https://cbni.atlassian.net/jira/rest/api/2/project/"
-        jira_username: "Nikhil_kumar"
-        jira_password: "ATATT3xFfGF0oMSVC1M0wdSQxdzrAPBh1LFAK3FnwscXSWAFilqwkwPk_fasMvdBG8lFV6k27Nm3ztrl8K7rORMm8JP0yYhLgEvCucuFalrBxtYqLncWhWi6oX_E_LO07FG-BgZFGnHvuT6nwsvaCUC322KclclQcwPrJA0gVOyHeH_3cG8wMlo=F0BECC95"
-        name: "Demo"
-        key: "PROJECTKEY"
-        state: "present"
-      register: project_result
+  - name: Create Jira Project
+    jira_project:
+      jira_url: "https://cbni.atlassian.net/jira/rest/api/2/project/"
+      jira_username: "Nikhil_kumar"
+      jira_password: "ATATT3xFfGF0oMSVC1M0wdSQxdzrAPBh1LFAK3FnwscXSWAFilqwkwPk_fasMvdBG8lFV6k27Nm3ztrl8K7rORMm8JP0yYhLgEvCucuFalrBxtYqLncWhWi6oX_E_LO07FG-BgZFGnHvuT6nwsvaCUC322KclclQcwPrJA0gVOyHeH_3cG8wMlo=F0BECC95"
+      name: "Demo"
+      key: "PROJECTKEY"
+      state: "present"
+    register: project_result
 
-    - name: Print Jira Project Result
-      debug:
-        var: project_result
+  - name: Print Jira Project Result
+    debug:
+      var: project_result
