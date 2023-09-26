@@ -1,0 +1,30 @@
+---
+- name: Create Jira Project
+  hosts: localhost
+  gather_facts: yes
+  tasks:
+    - include_vars: creds/Jira-creds/variable.yaml
+    - name: Create Jira Project
+      uri:
+        url: "{{url}}"
+        method: POST
+        user: "{{user}}"
+        password: "{{password}}"
+        force_basic_auth: yes
+        status_code: 201  # Expected status code for successful creation
+        body_format: json
+        body: |
+          {
+            "key": "APC",
+            "name": "AWS-Policy-Complince",
+            "projectTypeKey": "software",
+            "projectTemplateKey": "com.pyxis.greenhopper.jira:gh-kanban-template",
+            "description": "This is a new project created by Ansible",
+            "lead": "{{user}}",
+            "assigneeType": "PROJECT_LEAD"
+          }
+      register: jira_response
+
+    - name: Display Jira Response
+      debug:
+        var: jira_response.json

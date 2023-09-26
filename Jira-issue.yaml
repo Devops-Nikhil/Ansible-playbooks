@@ -1,0 +1,34 @@
+---
+- name: Add Issue to Jira Project
+  hosts: ec2-54-198-250-47.compute-1.amazonaws.com
+  gather_facts: yes
+  tasks:
+    - include_vars: creds/Jira-creds/jira-issue.yaml
+    - name: Add Jira Issue
+      uri:
+        url: "{{url}}"
+        method: POST
+        user: "{{user}}"
+        password: "{{password}}"
+        force_basic_auth: yes
+        status_code: 201  # Expected status code for successful creation
+        body_format: json
+        body: |
+          {
+            "fields": {
+                "project": {
+                    "key": "DOCKER"
+                },
+                "summary": "Issue-create",
+                "description": "This is an example issue created by Ansible",
+                "issuetype": {
+                    "name": "Task"
+                }
+            }
+          }
+
+      register: jira_response
+
+    - name: Display Jira Response
+      debug:
+        var: jira_response.json
