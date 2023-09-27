@@ -1,6 +1,6 @@
 ---
 - name: Create Jira Project
-  hosts: {{url}}
+  hosts: "{{url}}"
   gather_facts: yes
   tasks:
     - include_vars: creds/Jira-creds/variable.yaml
